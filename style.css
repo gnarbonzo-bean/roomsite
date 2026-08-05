@@ -1,0 +1,164 @@
+/* ============================================================
+   ROOM SITE — shared styles
+   Used by every page. Page-specific tweaks live in a <style>
+   block at the top of each page, if needed.
+   ============================================================ */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #eae6df;
+  color: #222;
+}
+
+a { color: inherit; }
+
+header {
+  text-align: center;
+  padding: 1.5rem 1rem 0.5rem;
+}
+header h1 { margin: 0 0 0.25rem; font-size: 1.5rem; }
+header nav {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+header nav a {
+  margin: 0 0.4rem;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* --- the room: a fixed-aspect-ratio box everything else is
+   positioned inside of, using percentages --- */
+.room {
+  position: relative;
+  aspect-ratio: 16 / 9;      /* match this to your scene image's ratio */
+  max-width: 95%;
+  max-height: calc(95dvh - 6rem);
+  margin: 0 auto;
+  background: #cfc9bd;        /* swap for: background: url('images/scene.png'); */
+  background-size: 100% 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* --- a clickable object inside the room --- */
+.thing {
+  position: absolute;
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+  color: transparent;
+  text-decoration: none;
+}
+
+.thing img {
+  width: 100%;
+  display: block;
+  transition: transform 0.15s ease;
+}
+
+/* placeholder box so the template is visible without real art */
+.thing .placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: rgba(80, 60, 40, 0.55);
+  border: 2px dashed rgba(80, 60, 40, 0.9);
+  border-radius: 6px;
+}
+
+/* label that appears on hover, centered over the object */
+.thing span {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: calc(0.7rem + 0.6vw);
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  filter:
+    drop-shadow(1px 1px 0 #222)
+    drop-shadow(-1px 1px 0 #222)
+    drop-shadow(1px -1px 0 #222)
+    drop-shadow(-1px -1px 0 #222);
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+/* hover style 1: object tilts slightly + label appears */
+.thing.rotate:hover img,
+.thing.rotate:focus-visible img,
+.thing.rotate:hover .placeholder,
+.thing.rotate:focus-visible .placeholder {
+  transform: rotate(3deg);
+}
+.thing.rotate:hover span,
+.thing.rotate:focus-visible span {
+  opacity: 1;
+}
+
+/* hover style 2: object is invisible until hovered (a "secret") */
+.thing.appear img,
+.thing.appear .placeholder {
+  opacity: 0.15; /* set to 0 once you have real transparent art */
+}
+.thing.appear:hover img,
+.thing.appear:hover .placeholder,
+.thing.appear:hover span,
+.thing.appear:focus-visible img,
+.thing.appear:focus-visible .placeholder,
+.thing.appear:focus-visible span {
+  opacity: 1;
+}
+
+/* --- simple content pages (about/contact/etc) --- */
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 3rem;
+  line-height: 1.6;
+}
+.page h1 { font-size: 1.75rem; }
+
+/* --- popover panel (used by the news/example popover on index) --- */
+[popover] {
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  max-width: 480px;
+  width: 90%;
+}
+[popover] .panel {
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 8px;
+}
+[popover] .panel h2 { margin-top: 0; }
+[popover] .panel button {
+  background: transparent;
+  border: none;
+  text-decoration: underline dotted;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  body { background: #1d2320; color: #eee; }
+  .room { background: #2a3330; }
+  footer { color: #aaa; }
+  [popover] .panel { background: #263029; color: #eee; }
+}

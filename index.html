@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>my room</title>
+<meta name="description" content="a little clickable room of a homepage">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>welcome to my room</h1>
+  <p>click around and see what you find</p>
+</header>
+
+<main class="room">
+
+  <!-- Example object 1: normal hover (tilt + label) -->
+  <a href="about.html" class="thing rotate" style="top: 10%; left: 8%; width: 18%;">
+    <div class="placeholder"></div>
+    <span>About</span>
+  </a>
+
+  <!-- Example object 2: normal hover, different spot -->
+  <a href="projects.html" class="thing rotate" style="top: 55%; left: 15%; width: 22%;">
+    <div class="placeholder"></div>
+    <span>Projects</span>
+  </a>
+
+  <!-- Example object 3: a "hidden" object that fades in on hover -->
+  <a href="secret.html" class="thing appear" style="top: 65%; left: 70%; width: 15%;">
+    <div class="placeholder"></div>
+    <span>???</span>
+  </a>
+
+  <!-- Example object 4 -->
+  <a href="contact.html" class="thing rotate" style="top: 20%; left: 78%; width: 16%;">
+    <div class="placeholder"></div>
+    <span>Contact</span>
+  </a>
+
+  <!-- Example object 5: opens a popover instead of navigating -->
+  <button popovertarget="news" class="thing rotate" style="top: 38%; left: 42%; width: 14%;">
+    <div class="placeholder"></div>
+    <span>News</span>
+  </button>
+
+  <div popover id="news">
+    <div class="panel">
+      <h2>news</h2>
+      <p>this is an example popover panel, opened without any JavaScript
+        using the native HTML <code>popover</code> attribute.</p>
+      <button popovertarget="news" popovertargetaction="hide">close</button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  built with a plain html + css "clickable room" — no framework needed
+</footer>
+
+</body>
+</html>
