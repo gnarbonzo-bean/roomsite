@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background: #eae6df;
+  background: #ffffff;
   color: #222;
 }
 
@@ -45,7 +45,7 @@ footer {
   max-width: 95%;
   max-height: calc(95dvh - 6rem);
   margin: 0 auto;
-  background: #cfc9bd;        /* swap for: background: url('images/scene.png'); */
+  background: #ffffff;        /* swap for: background: url('images/scene.png'); */
   background-size: 100% 100%;
   border-radius: 8px;
   overflow: hidden;
