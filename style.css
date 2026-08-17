@@ -131,6 +131,11 @@ footer {
   opacity: 1;
 }
 
+/* --- Notbook Text Border --- */
+.notebook {     border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAABhElEQVR4Xu3QQYrEMBDF0Mktc8TccmY3CzXEFPKmjbQLDgX/Xfd9//7Utq5A9xbo5gLd3Afo8zzX/0cto1+gMvoFKqNfoDL6LUH5Po33Tos+gcroE6iMPoHK6DMG5Tub/v/tcW+gMu4NVMa9gcq4N1AZ9wYq495AZdwbqIx7x6DTeO+06BOojD6ByugTqIw+S9B6j36ByugXqIx+gcroF6iMfoHK6BeojH6Byui3BOX7NN47LfoEKqNPoDL6BCqjzxiU72z6/7fHvYHKuDdQGfcGKuPeQGXcG6iMewOVcW+gMu4NVMa9gcq4N1AZ9wYq494x6DTeOy36BCqjT6Ay+gQqo88StN6jX6Ay+gUqo1+gMvoFKqNfoDL6BSqjX6Ay+i1B+T6N906LPoHK6BOojD6ByugzBuU7m/7/7XFvoDLuDVTGvYHKuDdQGfcGKuPeQGXcG6iMe8eg03jvtOgTqIw+gcroE6iMPkvQeo9+gcroF6iMfoHK6PcBWq5ANxfo5gLd3B/acxrOVymGzwAAAABJRU5ErkJggg==')
+   28 /  28px / 0 round;     border-width:  28px;     border-style:  solid;    
+}
+
 /* --- simple content pages (about/contact/etc) --- */
 .page {
   max-width: 640px;
